@@ -1,10 +1,10 @@
 <?php
    $accessToken = "TXTb8jhmD68qQst9FotqKtGXaSdLqpAtrMOfH48qzHrRwCNn1CmDbwaKij8Go8XNgZTZXQQpZHSyhWykeJdCNk32IECrWIuYvx4rjRoeMkoFfsEol3x5MGhZMP5NySEUoidv2POStl6Fh4/N6/eMMwdB04t89/1O/w1cDnyilFU=";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-$content = file_get_contents('php://input');
+   $content = file_get_contents('php://input');
    $arrayJson = json_decode($content, true);
-$arrayHeader = array();
-   $arrayHeader[] = "Content-Type: application/json";
-   $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+   $arrayHeader = array();
+      $arrayHeader[] = "Content-Type: application/json";
+      $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 //รับข้อความจากผู้ใช้
    $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ว่ามาจากไหน
@@ -31,7 +31,7 @@ echo "OK";
       
 function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/reply";//https://api.line.me/v2/bot/message/push
-$ch = curl_init();
+      $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
       curl_setopt($ch, CURLOPT_HEADER, false);
       curl_setopt($ch, CURLOPT_POST, true);
