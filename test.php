@@ -1,5 +1,5 @@
 <?php
-   $accessToken = "";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
+   $accessToken = "TXTb8jhmD68qQst9FotqKtGXaSdLqpAtrMOfH48qzHrRwCNn1CmDbwaKij8Go8XNgZTZXQQpZHSyhWykeJdCNk32IECrWIuYvx4rjRoeMkoFfsEol3x5MGhZMP5NySEUoidv2POStl6Fh4/N6/eMMwdB04t89/1O/w1cDnyilFU=";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
 $content = file_get_contents('php://input');
    $arrayJson = json_decode($content, true);
 $arrayHeader = array();
@@ -30,7 +30,7 @@ $arrayHeader = array();
 echo "OK";
       
 function pushMsg($arrayHeader,$arrayPostData){
-      $strUrl = "https://api.line.me/v2/bot/message/push";
+      $strUrl = "https://api.line.me/v2/bot/message/reply";//https://api.line.me/v2/bot/message/push
 $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
       curl_setopt($ch, CURLOPT_HEADER, false);
